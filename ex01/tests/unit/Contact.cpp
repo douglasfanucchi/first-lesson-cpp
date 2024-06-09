@@ -132,6 +132,28 @@ void test_should_ensure_formatted_nick_name_is_properly_formatted()
     ASSERT_STREQ(expected, result);
 }
 
+void test_should_ensure_formatted_index_is_properly_formatted()
+{
+    Contact contact("Douglas", "Fanucchi");
+    contact.setIndex(0);
+    std::string expected = "         0";
+    std::string result = contact.getFormattedIndex();
+    ASSERT_EQ(10, result.size());
+    ASSERT_STREQ(expected, result);
+
+    contact.setIndex(01);
+    expected = "         1";
+    result = contact.getFormattedIndex();
+    ASSERT_EQ(10, result.size());
+    ASSERT_STREQ(expected, result);
+
+    contact.setIndex(1000000000);
+    expected = "1000000000";
+    result = contact.getFormattedIndex();
+    ASSERT_EQ(10, result.size());
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_CONTACT_SUITE()
 {
     test_should_demonstrate_contact_creation();
@@ -141,4 +163,5 @@ void RUN_CONTACT_SUITE()
     test_should_ensure_formatted_first_name_is_properly_formatted();
     test_should_ensure_formatted_last_name_is_properly_formatted();
     test_should_ensure_formatted_nick_name_is_properly_formatted();
+    test_should_ensure_formatted_index_is_properly_formatted();
 }
