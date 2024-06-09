@@ -12,6 +12,9 @@ class Contact
     std::string darkestSecret;
     std::string phoneNumber;
 
+    protected:
+        std::string formatString(std::string) const;
+
     public:
         Contact(
             std::string firstName,
@@ -28,7 +31,6 @@ class Contact
         std::string getFormattedLastName() const;
         std::string getFormattedNickName() const;
         std::string getFormattedIndex() const;
-        std::string formatString(std::string) const;
         void setIndex(int index);
         void setNickName(std::string);
         void setDarkestSecret(std::string);
