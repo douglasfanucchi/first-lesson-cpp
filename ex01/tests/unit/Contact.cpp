@@ -39,19 +39,19 @@ void test_should_demonstrate_contact_creation()
 
 void test_should_ensure_formatted_first_name_is_properly_formatted()
 {
-    Contact firstNametWithLessThan10Chars("Douglas", "Fanucchi");
+    Contact firstNametWithLessThan10Chars;
     std::string expected = "   Douglas";
     std::string result = firstNametWithLessThan10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
-    Contact firstNameWith10Chars("Douglas123", "Fanucchi");
+    Contact firstNameWith10Chars;
     expected = "Douglas123";
     result = firstNameWith10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
-    Contact firstNameWithMoreThan10Chars("Douglas1234", "Fanucchi");
+    Contact firstNameWithMoreThan10Chars;
     expected = "Douglas12.";
     result = firstNameWithMoreThan10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
@@ -60,19 +60,19 @@ void test_should_ensure_formatted_first_name_is_properly_formatted()
 
 void test_should_ensure_formatted_last_name_is_properly_formatted()
 {
-    Contact lastNameWithLessThan10Chars("Douglas", "Fanucchi");
+    Contact lastNameWithLessThan10Chars;
     std::string expected = "  Fanucchi";
     std::string result = lastNameWithLessThan10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
-    Contact lastNameWith10Chars("Douglas", "Fanucchi12");
+    Contact lastNameWith10Chars;
     expected = "Fanucchi12";
     result = lastNameWith10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
-    Contact lastNameWithMoreThan10Chars("Douglas", "Fanucchi123");
+    Contact lastNameWithMoreThan10Chars;
     expected = "Fanucchi1.";
     result = lastNameWithMoreThan10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
@@ -81,7 +81,7 @@ void test_should_ensure_formatted_last_name_is_properly_formatted()
 
 void test_should_ensure_formatted_nick_name_is_properly_formatted()
 {
-    Contact contact("Douglas", "Fanucchi");
+    Contact contact;
     contact.setNickName("fnk");
     std::string expected = "       fnk";
     std::string result = contact.getFormattedNickName();
@@ -103,7 +103,7 @@ void test_should_ensure_formatted_nick_name_is_properly_formatted()
 
 void test_should_ensure_formatted_index_is_properly_formatted()
 {
-    Contact contact("Douglas", "Fanucchi");
+    Contact contact;
     contact.setIndex(0);
     std::string expected = "         0";
     std::string result = contact.getFormattedIndex();
