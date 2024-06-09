@@ -8,6 +8,7 @@ class PhoneBook
     int _size;
 
     public:
+        PhoneBook();
         int size() const;
 };
 #endif
