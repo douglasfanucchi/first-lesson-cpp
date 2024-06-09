@@ -10,5 +10,7 @@ class PhoneBook
     public:
         PhoneBook();
         int size() const;
+        void push(Contact);
+        const Contact *getContacts() const;
 };
 #endif
