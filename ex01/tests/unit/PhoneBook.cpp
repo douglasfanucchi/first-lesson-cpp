@@ -23,6 +23,8 @@ void test_should_push_contact_to_the_back_of_phonebook()
     std::string first_result = contacts[0].getPhoneNumber();
     std::string second_result = contacts[1].getPhoneNumber();
 
+    ASSERT_EQ(0, contacts[0].getIndex());
+    ASSERT_EQ(1, contacts[1].getIndex());
     ASSERT_STREQ(first_expected, first_result);
     ASSERT_STREQ(second_expected, second_result);
 }
