@@ -68,10 +68,26 @@ void test_should_shift_first_contact_in_order_to_add_a_new_one_in_a_full_list_of
     ASSERT_STREQ("Nineth", phonebook.getContacts()[7].getFirstName());
 }
 
+void test_should_retrieve_inline_information_about_a_certain_contact()
+{
+    PhoneBook phonebook;
+    Contact contact;
+    contact.setFirstName("Douglas");
+    contact.setLastName("Fanucchi");
+    contact.setNickName("sementinha do mau");
+    contact.setDarkestSecret("deu em cima da ex do amigo");
+    phonebook.push(contact);
+    std::string expected = "         0|   Douglas|  Fanucchi|sementinh.|";
+    
+    std::string result = phonebook.retrieveINLINEContactInfo(0);
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_PHONEBOOK_SUITE()
 {
     test_should_demonstrates_phonebook_creation();
     test_should_add_new_contact_and_chages_phonebooks_size();
     test_should_push_contact_to_the_back_of_phonebook();
     test_should_shift_first_contact_in_order_to_add_a_new_one_in_a_full_list_of_contacts();
+    test_should_retrieve_inline_information_about_a_certain_contact();
 }
