@@ -1,8 +1,18 @@
 #include "Contact.hpp"
 
+void Contact::setFirstName(std::string firstName)
+{
+    this->firstName = firstName;
+}
+
 std::string Contact::getFirstName() const
 {
     return this->firstName;
+}
+
+void Contact::setLastName(std::string lastName)
+{
+    this->lastName = lastName;
 }
 
 std::string Contact::getLastName() const
