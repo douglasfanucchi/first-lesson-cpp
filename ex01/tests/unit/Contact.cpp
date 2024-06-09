@@ -35,39 +35,6 @@ void test_should_demonstrate_contact_creation()
     ASSERT_EQ(int_expected, int_result);
 }
 
-void test_should_ensure_formatString_method_aligns_string_to_the_right()
-{
-    Contact contact("Douglas", "Fanucchi");
-    std::string expected = "   Douglas";
-
-    std::string result = contact.formatString(contact.getFirstName());
-
-    ASSERT_EQ(10, result.size());
-    ASSERT_STREQ(expected, result);
-}
-
-void test_should_ensure_formatString_method_returns_all_10_characaters()
-{
-    Contact contact("Douglas123", "Fanucchi");
-    std::string expected = "Douglas123";
-
-    std::string result = contact.formatString(contact.getFirstName());
-
-    ASSERT_EQ(10, result.size());
-    ASSERT_STREQ(expected, result);
-}
-
-void test_should_ensure_formatString_method_replaces_10th_char_by_a_dot()
-{
-    Contact contact("Douglas1234", "Fanucchi");
-    std::string expected = "Douglas12.";
-    
-    std::string result = contact.formatString(contact.getFirstName());
-
-    ASSERT_EQ(10, result.size());
-    ASSERT_STREQ(expected, result);
-}
-
 void test_should_ensure_formatted_first_name_is_properly_formatted()
 {
     Contact firstNametWithLessThan10Chars("Douglas", "Fanucchi");
@@ -157,9 +124,6 @@ void test_should_ensure_formatted_index_is_properly_formatted()
 void RUN_CONTACT_SUITE()
 {
     test_should_demonstrate_contact_creation();
-    test_should_ensure_formatString_method_aligns_string_to_the_right();
-    test_should_ensure_formatString_method_returns_all_10_characaters();
-    test_should_ensure_formatString_method_replaces_10th_char_by_a_dot();
     test_should_ensure_formatted_first_name_is_properly_formatted();
     test_should_ensure_formatted_last_name_is_properly_formatted();
     test_should_ensure_formatted_nick_name_is_properly_formatted();
