@@ -2,7 +2,7 @@ NAME=test
 
 all: $(NAME)
 
-files := Contact.cpp
+files := Contact.cpp PhoneBook.cpp
 test_files := unit/Contact.cpp unit/PhoneBook.cpp asserts.cpp
 test_files := $(addprefix tests/, $(test_files))
 
