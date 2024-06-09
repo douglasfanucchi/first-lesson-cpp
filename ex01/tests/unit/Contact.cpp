@@ -4,12 +4,14 @@
 
 void test_should_demonstrate_contact_creation()
 {
-    Contact contact("Douglas", "Fanucchi");
+    Contact contact;
 
+    contact.setFirstName("Douglas");
     std::string result = contact.getFirstName();
     std::string expected = "Douglas";
     ASSERT_STREQ(expected, result);
 
+    contact.setLastName("Fanucchi");
     result = contact.getLastName();
     expected = "Fanucchi";
     ASSERT_STREQ(expected, result);
