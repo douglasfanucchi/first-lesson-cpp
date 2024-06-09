@@ -1,6 +1,6 @@
 #include <Contact.hpp>
 #include <iostream>
-#include "../asserts.cpp"
+#include <asserts.hpp>
 
 void test_should_demonstrate_contact_creation()
 {

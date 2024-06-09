@@ -18,4 +18,12 @@ void ASSERT_EQ(int expected, int result)
         std::cerr << "E";
     }
 }
+
+void ASSERT_TRUE(bool value) {
+    if (value) {
+        std::cout << ".";
+    } else {
+        std::cerr << "E";
+    }
+}
 #endif
