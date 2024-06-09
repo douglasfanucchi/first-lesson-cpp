@@ -65,6 +65,11 @@ std::string Contact::getFormattedNickName() const
     return this->formatString(this->getNickName());
 }
 
+std::string Contact::getFormattedIndex() const
+{
+    return this->formatString(std::to_string(this->index));
+}
+
 std::string Contact::formatString(std::string string) const
 {
     if (string.size() < 11) {

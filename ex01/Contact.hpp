@@ -27,6 +27,7 @@ class Contact
         std::string getFormattedFirstName() const;
         std::string getFormattedLastName() const;
         std::string getFormattedNickName() const;
+        std::string getFormattedIndex() const;
         std::string formatString(std::string) const;
         void setIndex(int index);
         void setNickName(std::string);
