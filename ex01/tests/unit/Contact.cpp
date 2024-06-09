@@ -40,18 +40,21 @@ void test_should_demonstrate_contact_creation()
 void test_should_ensure_formatted_first_name_is_properly_formatted()
 {
     Contact firstNametWithLessThan10Chars;
+    firstNametWithLessThan10Chars.setFirstName("Douglas");
     std::string expected = "   Douglas";
     std::string result = firstNametWithLessThan10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
     Contact firstNameWith10Chars;
+    firstNameWith10Chars.setFirstName("Douglas123");
     expected = "Douglas123";
     result = firstNameWith10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
     Contact firstNameWithMoreThan10Chars;
+    firstNameWithMoreThan10Chars.setFirstName("Douglas1234");
     expected = "Douglas12.";
     result = firstNameWithMoreThan10Chars.getFormattedFirstName();
     ASSERT_EQ(10, result.size());
@@ -61,18 +64,21 @@ void test_should_ensure_formatted_first_name_is_properly_formatted()
 void test_should_ensure_formatted_last_name_is_properly_formatted()
 {
     Contact lastNameWithLessThan10Chars;
+    lastNameWithLessThan10Chars.setLastName("Fanucchi");
     std::string expected = "  Fanucchi";
     std::string result = lastNameWithLessThan10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
     Contact lastNameWith10Chars;
+    lastNameWith10Chars.setLastName("Fanucchi12");
     expected = "Fanucchi12";
     result = lastNameWith10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
     ASSERT_STREQ(expected, result);
 
     Contact lastNameWithMoreThan10Chars;
+    lastNameWithMoreThan10Chars.setLastName("Fanucchi123");
     expected = "Fanucchi1.";
     result = lastNameWithMoreThan10Chars.getFormattedLastName();
     ASSERT_EQ(10, result.size());
