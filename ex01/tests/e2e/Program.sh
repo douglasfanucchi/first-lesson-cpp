@@ -37,7 +37,8 @@ function test_shows_input_fields_to_add_new_contact_when_passes_add_command()
                         Fanucchi
                         sementinha do mau
                         11999999999
-                        deu em cima da ex do amigo" | eval $executable)
+                        deu em cima da ex do amigo
+EXIT" | eval $executable)
 
     ASSERT_STREQ "$expected" "$result"
 }
@@ -51,7 +52,8 @@ function test_displays_all_users_and_user_information_after_user_index_is_specif
          program_input+=$'1199999999\n'
          program_input+=$'deu em cima da ex do amigo\n'
          program_input+=$'SEARCH\n'
-         program_input+=$'0'
+         program_input+=$'0\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
@@ -84,7 +86,8 @@ function test_display_user_not_found_when_passes_invalid_index_on_SEARCH_command
          program_input+=$'1199999999\n'
          program_input+=$'deu em cima da ex do amigo\n'
          program_input+=$'SEARCH\n'
-         program_input+=$'1'
+         program_input+=$'1\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
@@ -112,6 +115,7 @@ function test_should_not_exit_program_when_exit_is_a_value_for_any_contact_field
          program_input+=$'sementinha do mau\n'
          program_input+=$'1199999999\n'
          program_input+=$'deu em cima da ex do amigo\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
@@ -133,6 +137,7 @@ function test_should_receive_an_error_message_when_try_to_input_empty_value_into
          program_input+=$'sementinha do mau\n'
          program_input+=$'1199999999\n'
          program_input+=$'deu em cima da ex do amigo\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Contact field cannot be empty!\n'
@@ -158,6 +163,7 @@ test_should_receive_a_error_message_message_when_inputs_empty_value_into_search_
          program_input+=$'SEARCH\n'
          program_input+=$'\n'
          program_input+=$'1\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
@@ -190,6 +196,7 @@ function test_should_receive_a_error_message_when_try_to_input_text_into_search_
          program_input+=$'SEARCH\n'
          program_input+=$'string qualquer\n'
          program_input+=$'0\n'
+         program_input+=$'EXIT\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
