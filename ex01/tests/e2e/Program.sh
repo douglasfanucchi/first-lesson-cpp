@@ -2,7 +2,7 @@
 
 function ASSERT_STREQ()
 {
-if [[ $1 == $2 ]];
+if [[ "$1" == "$2" ]];
 then
     printf ✅
 else
@@ -147,7 +147,7 @@ function test_should_receive_an_error_message_when_try_to_input_empty_value_into
     ASSERT_STREQ "$expected" "$result"
 }
 
-test_should_receive_a_not_found_message_when_inputs_empty_value_into_search_index()
+test_should_receive_a_error_message_message_when_inputs_empty_value_into_search_index()
 {
     local program_input=$'ADD\n'
          program_input+=$'Douglas\n'
@@ -157,6 +157,7 @@ test_should_receive_a_not_found_message_when_inputs_empty_value_into_search_inde
          program_input+=$'deu em cima da ex do amigo\n'
          program_input+=$'SEARCH\n'
          program_input+=$'\n'
+         program_input+=$'1\n'
 
     local expected=$'First Name: \n'
          expected+=$'Last Name: \n'
@@ -169,7 +170,9 @@ test_should_receive_a_not_found_message_when_inputs_empty_value_into_search_inde
          expected+=$'|         0|   Douglas|  Fanucchi|sementinh.|\n'
          expected+=$'---------------------------------------------\n'
          expected+=$'User index to display: \n'
-         expected+=$'* SEARCH INDEX CANNOT BE EMPTY *'
+         expected+=$'* SEARCH INDEX CANNOT BE EMPTY *\n'
+         expected+=$'User index to display: \n'
+         expected+=$'* CONTACT NOT FOUND *'
 
     local result=$(echo "$program_input" | eval $executable)
 
@@ -218,6 +221,6 @@ test_displays_all_users_and_user_information_after_user_index_is_specified_on_SE
 test_display_user_not_found_when_passes_invalid_index_on_SEARCH_command
 test_should_not_exit_program_when_exit_is_a_value_for_any_contact_field
 test_should_receive_an_error_message_when_try_to_input_empty_value_into_contact_field
-test_should_receive_a_not_found_message_when_inputs_empty_value_into_search_index
+test_should_receive_a_error_message_message_when_inputs_empty_value_into_search_index
 test_should_receive_a_error_message_when_try_to_input_text_into_search_index
 printf \\n
