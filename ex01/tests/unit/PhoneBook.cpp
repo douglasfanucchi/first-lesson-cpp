@@ -99,6 +99,28 @@ void test_should_retrieve_a_not_found_message_when_trying_to_retrieve_info_about
     ASSERT_STREQ(expected, result);
 }
 
+void test_should_retrieve_all_informations_about_a_contact()
+{
+    PhoneBook phonebook;
+    Contact contact;
+    contact.setFirstName("Douglas");
+    contact.setLastName("Fanucchi");
+    contact.setNickName("sementinha do mau");
+    contact.setDarkestSecret("deu em cima da ex do amigo");
+    contact.setPhoneNumber("11988888888");
+    phonebook.push(contact);
+    std::string expected = "Index: 0" + std::string("\n") +
+                    "First Name: Douglas" + std::string("\n") +
+                    "Last Name: Fanucchi" + std::string("\n") +
+                    "Nickname: sementinha do mau" + std::string("\n") +
+                    "PhoneNumber: 11988888888" + std::string("\n") +
+                    "Darkest Secret: deu em cima da ex do amigo";
+
+    std::string result = phonebook.retrieveContactInfo(0);
+
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_PHONEBOOK_SUITE()
 {
     test_should_demonstrates_phonebook_creation();
@@ -107,4 +129,5 @@ void RUN_PHONEBOOK_SUITE()
     test_should_shift_first_contact_in_order_to_add_a_new_one_in_a_full_list_of_contacts();
     test_should_retrieve_inline_information_about_a_certain_contact();
     test_should_retrieve_a_not_found_message_when_trying_to_retrieve_info_about_inexistence_contact();
+    test_should_retrieve_all_informations_about_a_contact();
 }
