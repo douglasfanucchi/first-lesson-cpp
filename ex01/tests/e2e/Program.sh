@@ -141,7 +141,7 @@ function test_should_receive_an_error_message_when_try_to_input_empty_value_into
          program_input+=$'EXIT\n'
 
     local expected=$'First Name: '
-         expected+=$'Contact field cannot be empty!\n'
+         expected+=$'First Name cannot be empty!\n'
          expected+=$'First Name: '
          expected+=$'Last Name: '
          expected+=$'Nickname: '
