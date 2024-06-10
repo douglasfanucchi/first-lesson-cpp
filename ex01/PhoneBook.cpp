@@ -40,3 +40,20 @@ std::string PhoneBook::retrieveINLINEContactInfo(int index)
             + "|" + contact.getFormattedLastName()
             + "|" + contact.getFormattedNickName();
 }
+
+std::string PhoneBook::retrieveContactInfo(int index)
+{
+    Contact contact;
+
+    if (index < 0 || index > this->size() - 1) {
+        return "* CONTACT NOT FOUND *";
+    }
+
+    contact = this->getContacts()[index];
+    return "Index: " + std::to_string(contact.getIndex()) + std::string("\n") +
+            "First Name: " + contact.getFirstName() + std::string("\n") +
+            "Last Name: " + contact.getLastName() + std::string("\n") +
+            "Nickname: " + contact.getNickName() + std::string("\n") +
+            "PhoneNumber: " + contact.getPhoneNumber() + std::string("\n") +
+            "Darkest Secret: " + contact.getDarkestSecret();
+}
