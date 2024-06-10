@@ -61,14 +61,8 @@ void Program::search()
     std::cout << "---------------------------------------------" << std::endl;
     std::cout << "|" << index << "|" << firstName << "|" << lastName << "|" << nickName << "|" << std::endl;
     std::cout << "---------------------------------------------" << std::endl;
-
     for(int i = 0; i < this->phonebook.size(); i++) {
-        contact = contacts[i];
-        index = contact.getFormattedIndex();
-        firstName = contact.getFormattedFirstName();
-        lastName = contact.getFormattedLastName();
-        nickName = contact.getFormattedNickName();
-        std::cout << "|" << index << "|" << firstName << "|" << lastName << "|" << nickName << "|" << std::endl;
+        std::cout << "|" << this->phonebook.retrieveINLINEContactInfo(i) << "|" << std::endl;
     }
     std::cout << "---------------------------------------------" << std::endl;
     contactIndex = this->getIntField("User index to display", "* SEARCH INDEX CANNOT BE EMPTY *");
