@@ -19,7 +19,8 @@ void PhoneBook::push(Contact contact)
     }
     contact.setIndex(index);
     this->contacts[index] = contact;
-    this->_size++;
+    if (this->_size < 8)
+        this->_size++;
 }
 
 const Contact *PhoneBook::getContacts() const
