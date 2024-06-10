@@ -68,6 +68,7 @@ void test_should_shift_first_contact_in_order_to_add_a_new_one_in_a_full_list_of
     ASSERT_STREQ("Nineth", phonebook.getContacts()[7].getFirstName());
     ASSERT_EQ(0, phonebook.getContacts()[0].getIndex());
     ASSERT_EQ(7, phonebook.getContacts()[7].getIndex());
+    ASSERT_EQ(8, phonebook.size());
 }
 
 void test_should_retrieve_inline_information_about_a_certain_contact()
