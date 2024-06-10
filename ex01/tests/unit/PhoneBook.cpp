@@ -83,6 +83,21 @@ void test_should_retrieve_inline_information_about_a_certain_contact()
     ASSERT_STREQ(expected, result);
 }
 
+void test_should_retrieve_a_not_found_message_when_trying_to_retrieve_info_about_inexistence_contact()
+{
+    PhoneBook phonebook;
+    std::string expected = "* CONTACT NOT FOUND *";
+
+    std::string result = phonebook.retrieveINLINEContactInfo(0);
+
+    ASSERT_STREQ(expected, result);
+
+    phonebook.push(Contact());
+    result = phonebook.retrieveINLINEContactInfo(-1);
+
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_PHONEBOOK_SUITE()
 {
     test_should_demonstrates_phonebook_creation();
@@ -90,4 +105,5 @@ void RUN_PHONEBOOK_SUITE()
     test_should_push_contact_to_the_back_of_phonebook();
     test_should_shift_first_contact_in_order_to_add_a_new_one_in_a_full_list_of_contacts();
     test_should_retrieve_inline_information_about_a_certain_contact();
+    test_should_retrieve_a_not_found_message_when_trying_to_retrieve_info_about_inexistence_contact();
 }
