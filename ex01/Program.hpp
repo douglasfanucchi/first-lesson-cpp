@@ -9,6 +9,10 @@ class Program
     bool _isRunning;
     PhoneBook phonebook;
 
+    protected:
+        void add();
+        std::string getTextField(std::string, std::string);
+
     public:
         Program();
         bool isRunning() const;
