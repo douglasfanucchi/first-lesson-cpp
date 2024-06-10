@@ -7,6 +7,9 @@ then
     printf ✅
 else
     printf ❌
+    echo -en "\nEXPECTED\n$1\n";
+    echo -en "_______________________________________________\n";
+    echo -en "RESULT\n$2";
 fi
 }
 
