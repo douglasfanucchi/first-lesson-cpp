@@ -11,8 +11,10 @@ class Program
 
     protected:
         void add();
+        void search();
         std::string formatString(std::string) const;
         std::string getTextField(std::string, std::string);
+        int getIntField(std::string, std::string);
 
     public:
         Program();
