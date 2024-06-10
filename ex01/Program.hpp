@@ -2,10 +2,12 @@
 # define PROGRAM_H
 
 #include <iostream>
+#include <PhoneBook.hpp>
 
 class Program
 {
     bool _isRunning;
+    PhoneBook phonebook;
 
     public:
         Program();
