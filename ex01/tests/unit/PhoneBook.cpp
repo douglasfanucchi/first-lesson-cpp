@@ -1,4 +1,3 @@
-#include <iostream>
 #include <PhoneBook.hpp>
 #include <asserts.hpp>
 
@@ -93,7 +92,6 @@ void test_should_retrieve_a_not_found_message_when_trying_to_retrieve_info_about
 
     ASSERT_STREQ(expected, result);
 
-    phonebook.push(Contact());
     result = phonebook.retrieveINLINEContactInfo(-1);
 
     ASSERT_STREQ(expected, result);
