@@ -14,6 +14,7 @@ void PhoneBook::push(Contact contact)
         index = 7;
         for(int i = 0; i < 7; i++) {
             this->contacts[i] = this->contacts[i + 1];
+            this->contacts[i].setIndex(i);
         }
     }
     contact.setIndex(index);
