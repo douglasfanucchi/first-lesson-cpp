@@ -169,7 +169,7 @@ test_should_receive_a_not_found_message_when_inputs_empty_value_into_search_inde
          expected+=$'|         0|   Douglas|  Fanucchi|sementinh.|\n'
          expected+=$'---------------------------------------------\n'
          expected+=$'User index to display: \n'
-         expected+=$'* CONTACT NOT FOUND *'
+         expected+=$'* SEARCH INDEX CANNOT BE EMPTY *'
 
     local result=$(echo "$program_input" | eval $executable)
 
