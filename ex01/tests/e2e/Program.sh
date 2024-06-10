@@ -21,5 +21,24 @@ local result=$(echo -n "EXIT" | eval $executable)
 ASSERT_STREQ "$expected" "$result"
 }
 
+function test_shows_input_fields_to_add_new_contact_when_passes_add_command()
+{
+    local expected=$'First Name: \n'
+          expected+=$'Last Name: \n'
+          expected+=$'Nickname: \n'
+          expected+=$'Phonenumber: \n'
+          expected+=$'Darkest Secret: ' 
+
+    local result=$(echo "ADD
+                        Douglas
+                        Fanucchi
+                        sementinha do mau
+                        11999999999
+                        deu em cima da ex do amigo" | eval $executable)
+
+    ASSERT_STREQ "$expected" "$result"
+}
+
 test_exits_program_when_type_EXIT
+test_shows_input_fields_to_add_new_contact_when_passes_add_command
 printf \\n
