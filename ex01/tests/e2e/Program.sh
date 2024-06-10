@@ -66,10 +66,11 @@ function test_displays_all_users_and_user_information_after_user_index_is_specif
          expected+=$'|         0|   Douglas|  Fanucchi|sementinh.|\n'
          expected+=$'---------------------------------------------\n'
          expected+=$'User index to display: '
+         expected+=$'Index: 0\n'
          expected+=$'First Name: Douglas\n'
          expected+=$'Last Name: Fanucchi\n'
          expected+=$'Nickname: sementinha do mau\n'
-         expected+=$'Phonenumber: 1199999999\n'
+         expected+=$'PhoneNumber: 1199999999\n'
          expected+=$'Darkest Secret: deu em cima da ex do amigo'
 
     local result=$(echo "$program_input" | eval $executable)
@@ -211,10 +212,11 @@ function test_should_receive_a_error_message_when_try_to_input_text_into_search_
          expected+=$'User index to display: '
          expected+=$'* INDEX SHOULD BE A NUMBER *\n'
          expected+=$'User index to display: '
+         expected+=$'Index: 0\n'
          expected+=$'First Name: Douglas\n'
          expected+=$'Last Name: Fanucchi\n'
          expected+=$'Nickname: sementinha do mau\n'
-         expected+=$'Phonenumber: 1199999999\n'
+         expected+=$'PhoneNumber: 1199999999\n'
          expected+=$'Darkest Secret: deu em cima da ex do amigo'
 
     local result=$(echo "$program_input" | eval $executable)
