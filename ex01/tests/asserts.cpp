@@ -4,26 +4,26 @@
 void ASSERT_STREQ(std::string expected, std::string result)
 {
     if (expected == result) {
-        std::cout << ".";
+        std::cout << "✅";
     } else {
-        std::cerr << "E";
+        std::cerr << "❌";
     }
 }
 
 void ASSERT_EQ(int expected, int result)
 {
     if (expected == result) {
-        std::cout << ".";
+        std::cout << "✅";
     } else {
-        std::cerr << "E";
+        std::cerr << "❌";
     }
 }
 
 void ASSERT_TRUE(bool value) {
     if (value) {
-        std::cout << ".";
+        std::cout << "✅";
     } else {
-        std::cerr << "E";
+        std::cerr << "❌";
     }
 }
 #endif
