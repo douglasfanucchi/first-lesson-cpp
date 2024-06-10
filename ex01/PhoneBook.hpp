@@ -12,5 +12,6 @@ class PhoneBook
         int size() const;
         void push(Contact);
         const Contact *getContacts() const;
+        std::string retrieveINLINEContactInfo(int);
 };
 #endif

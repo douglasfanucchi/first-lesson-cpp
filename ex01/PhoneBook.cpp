@@ -25,3 +25,18 @@ const Contact *PhoneBook::getContacts() const
 {
     return this->contacts;
 }
+
+std::string PhoneBook::retrieveINLINEContactInfo(int index)
+{
+    Contact contact;
+
+    if (index < 0 || index > this->size() - 1) {
+        return "* CONTACT NOT FOUND *";
+    }
+
+    contact = this->getContacts()[index];
+    return contact.getFormattedIndex()
+            + "|" + contact.getFormattedFirstName()
+            + "|" + contact.getFormattedLastName()
+            + "|" + contact.getFormattedNickName();
+}
