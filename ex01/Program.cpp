@@ -28,10 +28,10 @@ void Program::add()
     Contact contact;
 
     contact.setFirstName(
-        this->getTextField("First Name", "First name cannot be empty!")
+        this->getTextField("First Name", "First Name cannot be empty!")
     );
     contact.setLastName(
-        this->getTextField("Last Name", "Last name cannot be empty!")
+        this->getTextField("Last Name", "Last Name cannot be empty!")
     );
     contact.setNickName(
         this->getTextField("Nickname", "Nickname cannot be empty!")
