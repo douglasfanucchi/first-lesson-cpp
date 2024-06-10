@@ -10,6 +10,7 @@ class Program
     public:
         Program();
         bool isRunning() const;
+        void run(std::string);
 };
 
 #endif
