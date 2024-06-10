@@ -1,3 +1,4 @@
+#include <iostream>
 #include <PhoneBook.hpp>
 #include <asserts.hpp>
 
@@ -77,8 +78,8 @@ void test_should_retrieve_inline_information_about_a_certain_contact()
     contact.setNickName("sementinha do mau");
     contact.setDarkestSecret("deu em cima da ex do amigo");
     phonebook.push(contact);
-    std::string expected = "         0|   Douglas|  Fanucchi|sementinh.|";
-    
+    std::string expected = "         0|   Douglas|  Fanucchi|sementinh.";
+
     std::string result = phonebook.retrieveINLINEContactInfo(0);
     ASSERT_STREQ(expected, result);
 }
