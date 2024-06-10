@@ -9,6 +9,9 @@ test_files := $(addprefix tests/, $(test_files))
 $(NAME): $(files) main.cpp
 	@g++ -I ./ $(files) main.cpp -o $@
 
+e2e: $(NAME)
+	@./tests/e2e/Program.sh $(realpath $(NAME))
+
 unit: tests.cpp $(files) $(test_files)
 	@g++ -I . -I ./tests tests.cpp $(files) $(test_files) -o unit
 	@./unit
