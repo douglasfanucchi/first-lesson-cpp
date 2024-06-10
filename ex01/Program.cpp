@@ -42,6 +42,17 @@ void Program::add()
     this->phonebook.push(contact);
 }
 
+std::string Program::formatString(std::string string) const
+{
+    if (string.size() < 11) {
+        int spacesToInsert = 10 - string.size();
+        string.insert(0, spacesToInsert, ' ');
+        return string;
+    }
+
+    return string.substr(0, 9) + ".";
+}
+
 std::string Program::getTextField(std::string label, std::string validationMessage)
 {
     std::string input("");

@@ -11,6 +11,7 @@ class Program
 
     protected:
         void add();
+        std::string formatString(std::string) const;
         std::string getTextField(std::string, std::string);
 
     public:
