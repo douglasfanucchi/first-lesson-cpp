@@ -9,6 +9,10 @@ void ASSERT_TRUE(bool value) {
     }
 }
 
+void ASSERT_FALSE(bool value) {
+    ASSERT_TRUE(value == false);
+}
+
 void ERROR_MESSAGE(std::string expected, std::string result)
 {
     std::cerr << std::endl << "EXPECTED: " << std::endl;
