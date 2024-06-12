@@ -2,7 +2,7 @@ NAME=phonebook
 
 all: $(NAME)
 
-files := Contact.cpp PhoneBook.cpp Program.cpp
+files := Contact.cpp PhoneBook.cpp Program.cpp Utils.cpp
 files := $(addprefix src/, $(files))
 test_files := unit/Contact.cpp unit/PhoneBook.cpp unit/Program.cpp unit/Utils.cpp asserts.cpp tests.cpp
 test_files := $(addprefix tests/, $(test_files))
