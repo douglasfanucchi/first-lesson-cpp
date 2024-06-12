@@ -46,13 +46,15 @@ std::string PhoneBook::retrieveINLINEContactInfo(int index)
 std::string PhoneBook::retrieveContactInfo(int index)
 {
     Contact contact;
+    std::ostringstream stream;
 
     if (index < 0 || index > this->size() - 1) {
         return "* CONTACT NOT FOUND *";
     }
 
     contact = this->getContacts()[index];
-    return "Index: " + std::to_string(contact.getIndex()) + std::string("\n") +
+    stream << contact.getIndex();
+    return "Index: " + stream.str() + std::string("\n") +
             "First Name: " + contact.getFirstName() + std::string("\n") +
             "Last Name: " + contact.getLastName() + std::string("\n") +
             "Nickname: " + contact.getNickName() + std::string("\n") +

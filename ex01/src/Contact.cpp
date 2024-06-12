@@ -77,7 +77,10 @@ std::string Contact::getFormattedNickName() const
 
 std::string Contact::getFormattedIndex() const
 {
-    return this->formatString(std::to_string(this->index));
+    std::ostringstream stream;
+
+    stream << this->index;
+    return this->formatString(stream.str());
 }
 
 std::string Contact::formatString(std::string string) const

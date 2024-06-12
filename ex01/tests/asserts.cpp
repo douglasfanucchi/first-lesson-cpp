@@ -1,6 +1,7 @@
 #ifndef TESTS_H
 # define TESTS_H
 #include <iostream>
+#include <sstream>
 void ASSERT_TRUE(bool value) {
     if (value) {
         std::cout << "✅";
@@ -32,9 +33,14 @@ void ASSERT_STREQ(std::string expected, std::string result)
 
 void ASSERT_EQ(int expected, int result)
 {
+    std::ostringstream expectedStream;
+    std::ostringstream resultStream;
+
+    expectedStream << expected;
+    resultStream << result;
     ASSERT_TRUE(expected == result);
     if (expected != result) {
-        ERROR_MESSAGE(std::to_string(expected), std::to_string(result));
+        ERROR_MESSAGE(expectedStream.str(), resultStream.str());
     }
 }
 #endif

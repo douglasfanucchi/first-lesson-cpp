@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 #include <Contact.hpp>
+#include <sstream>
 
 class PhoneBook
 {

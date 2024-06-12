@@ -2,6 +2,7 @@
 # define CONTACT_H
 
 #include <string>
+#include <sstream>
 
 class Contact
 {
