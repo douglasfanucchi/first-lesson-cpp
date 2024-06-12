@@ -153,6 +153,33 @@ function test_should_receive_an_error_message_when_try_to_input_empty_value_into
     ASSERT_STREQ "$expected" "$result"
 }
 
+function test_passes_spaces_and_tabs_to_a_contact_field_and_expects_an_error_message()
+{
+     local program_input=$'ADD\n'
+          program_input+=$' \n'
+          program_input+=$'\t\n'
+          program_input+=$'Douglas\n'
+          program_input+=$'Fanucchi\n'
+          program_input+=$'sementinha do mau\n'
+          program_input+=$'11999999999\n'
+          program_input+=$'deu em cima da ex do amigo\n'
+          program_input+=$'EXIT\n'
+
+     local expected=$'First Name: '
+          expected+=$'First Name cannot be empty!\n'
+          expected+=$'First Name: '
+          expected+=$'First Name cannot be empty!\n'
+          expected+=$'First Name: '
+          expected+=$'Last Name: '
+          expected+=$'Nickname: '
+          expected+=$'Phonenumber: '
+          expected+=$'Darkest Secret: '
+
+     local result=$(echo "$program_input" | eval $executable)
+     
+     ASSERT_STREQ "$expected" "$result"
+}
+
 test_should_receive_a_error_message_message_when_inputs_empty_value_into_search_index()
 {
     local program_input=$'ADD\n'
@@ -230,6 +257,7 @@ test_displays_all_users_and_user_information_after_user_index_is_specified_on_SE
 test_display_user_not_found_when_passes_invalid_index_on_SEARCH_command
 test_should_not_exit_program_when_exit_is_a_value_for_any_contact_field
 test_should_receive_an_error_message_when_try_to_input_empty_value_into_contact_field
+test_passes_spaces_and_tabs_to_a_contact_field_and_expects_an_error_message
 test_should_receive_a_error_message_message_when_inputs_empty_value_into_search_index
 test_should_receive_a_error_message_when_try_to_input_text_into_search_index
 printf \\n
