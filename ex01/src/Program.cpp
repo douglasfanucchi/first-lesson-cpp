@@ -107,5 +107,5 @@ int Program::getIntField(std::string label, std::string validationMessage)
         input = this->getTextField(label, validationMessage);
     }
 
-    return std::stoi(input);
+    return std::atoi(input.c_str());
 }

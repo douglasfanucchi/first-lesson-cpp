@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <PhoneBook.hpp>
+#include <cstdlib>
 
 class Program
 {
