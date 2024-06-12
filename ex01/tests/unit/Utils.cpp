@@ -51,6 +51,16 @@ void test_should_call_trim_passing_a_string_with_tabs_spaces_at_the_the_end_and_
     ASSERT_STREQ(expected, result);
 }
 
+void test_should_call_trim_passing_tabs_into_the_middle_of_string_and_expects_the_string_without_it()
+{
+    std::string input("my\t\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext");
+    std::string expected("my text");
+
+    std::string result = Utils::trim(input);
+
+    ASSERT_STREQ(expected, result);
+}
+
 void RUN_UTILS_SUITE()
 {
     test_should_call_trim_passing_a_string_with_empty_spaces_at_the_beggining_and_expects_the_string_without_it();
@@ -58,4 +68,5 @@ void RUN_UTILS_SUITE()
     test_should_call_trim_passing_empty_spaces_into_the_middle_of_string_and_expects_the_string_without_it();
     test_should_call_trim_passing_a_string_with_tabs_spaces_at_the_beggining_and_expects_the_string_without_it();
     test_should_call_trim_passing_a_string_with_tabs_spaces_at_the_the_end_and_expects_the_string_without_it();
+    test_should_call_trim_passing_tabs_into_the_middle_of_string_and_expects_the_string_without_it();
 }
