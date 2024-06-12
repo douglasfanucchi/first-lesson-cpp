@@ -1,7 +1,6 @@
 #ifndef TESTS_H
 # define TESTS_H
-#include <iostream>
-#include <sstream>
+#include <asserts.hpp>
 void ASSERT_TRUE(bool value) {
     if (value) {
         std::cout << "✅";
