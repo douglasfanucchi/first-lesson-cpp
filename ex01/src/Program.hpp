@@ -4,6 +4,7 @@
 #include <iostream>
 #include <PhoneBook.hpp>
 #include <cstdlib>
+#include <Utils.hpp>
 
 class Program
 {

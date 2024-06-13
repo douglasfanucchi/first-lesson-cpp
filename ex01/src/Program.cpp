@@ -88,6 +88,7 @@ std::string Program::getTextField(std::string label, std::string validationMessa
         std::cout << label << ": ";
         std::getline(std::cin, input);
 
+        input = Utils::trim(input);
         if(input.size() == 0) {
             std::cout << validationMessage << std::endl;
         }
